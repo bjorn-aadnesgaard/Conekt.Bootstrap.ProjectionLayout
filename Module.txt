@@ -1,0 +1,11 @@
+﻿Name: Bootstrap Carousel Projection Layout
+AntiForgery: enabled
+Author: Bjorn Aadnesgaard
+Website: http://conekted.com
+Version: 1.0.0
+OrchardVersion: 1.4
+Description: Projection layout for the Twitter Bootstrap Carousel.
+Features:
+    Conekt.Bootstrap.ProjectionLayout:
+        Description: Projection layout for the Twitter Bootstrap Carousel.
+		Category: Designer
