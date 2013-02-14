@@ -39,7 +39,7 @@ namespace Conekt.Bootstrap.ProjectionLayout.Layouts
 			int slide = 0;
 			foreach (var item in items)
 			{
-				Output.Write("<li data-target=\"#" + Id + "\" data-slide-to=\"" + slide + "\"></li>", Id);
+				Output.Write("<li " + (slide == 0 ? "class=\"active\"" : null) + " data-target=\"#" + Id + "\" data-slide-to=\"" + slide + "\"></li>", Id);
 				slide++;
 			}
 			Output.Write(paginationTag.ToString(TagRenderMode.EndTag));
