@@ -30,8 +30,20 @@ namespace Conekt.Bootstrap.ProjectionLayout.Layouts
 			var innerDivTag = GetTagBuilder("div", string.Empty, InnerClasses, InnerAttributes);
 			var firstItemTag = GetTagBuilder("div", string.Empty, FirstItemClasses, FirstItemAttributes);
 			var itemTag = GetTagBuilder("div", string.Empty, ItemClasses, ItemAttributes);
+			var paginationTag = GetTagBuilder("ol", string.Empty, new List<string>() { "carousel-indicators" }, null);
 
 			Output.Write(outerDivTag.ToString(TagRenderMode.StartTag));
+
+			//Carousel Pagination
+			Output.Write(paginationTag.ToString(TagRenderMode.StartTag));
+			int slide = 0;
+			foreach (var item in items)
+			{
+				Output.Write("<li data-target=\"#" + Id + "\" data-slide-to=\"" + slide + "\"></li>", Id);
+				slide++;
+			}
+			Output.Write(paginationTag.ToString(TagRenderMode.EndTag));
+
 			Output.Write(innerDivTag.ToString(TagRenderMode.StartTag));
 
 			int i = 0;
@@ -50,6 +62,7 @@ namespace Conekt.Bootstrap.ProjectionLayout.Layouts
 
 			Output.Write(innerDivTag.ToString(TagRenderMode.EndTag));
 
+			//Carousel Nav
 			Output.Write("<a href=\"#{0}\" class=\"carousel-control left\" data-slide=\"prev\">&lsaquo;</a>", Id);
 			Output.Write("<a href=\"#{0}\" class=\"carousel-control right\" data-slide=\"next\">&rsaquo;</a>", Id);
 
